@@ -4,12 +4,13 @@ export default function HowItWorksPage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
+      <section className="relative overflow-hidden bg-surface">
+        <div className="orb orb-purple -right-20 -top-20 h-80 w-80 opacity-20" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             How RevdCars works
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
             Whether you&apos;re looking to rent a car or earn money sharing yours,
             we make the process simple, safe, and seamless.
           </p>
@@ -17,10 +18,10 @@ export default function HowItWorksPage() {
       </section>
 
       {/* For Renters */}
-      <section className="bg-surface py-20">
+      <section className="bg-surface-light py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <span className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+            <span className="badge-glow rounded-full px-4 py-1.5 text-sm font-semibold">
               For Renters
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground">
@@ -59,13 +60,13 @@ export default function HowItWorksPage() {
                 <div className="flex-1">
                   <div className="text-6xl font-bold text-primary/10">{item.step}</div>
                   <h3 className="mt-2 text-2xl font-bold text-foreground">{item.title}</h3>
-                  <p className="mt-4 text-lg leading-relaxed text-muted">{item.description}</p>
+                  <p className="mt-4 text-lg leading-relaxed text-slate-400">{item.description}</p>
                 </div>
                 <div className="flex-1">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
+                    className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg shadow-black/30 ring-1 ring-white/5"
                   />
                 </div>
               </div>
@@ -75,10 +76,10 @@ export default function HowItWorksPage() {
       </section>
 
       {/* For Hosts */}
-      <section className="bg-white py-20">
+      <section className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <span className="rounded-full bg-accent/10 px-4 py-1.5 text-sm font-semibold text-amber-600">
+            <span className="badge-electric rounded-full px-4 py-1.5 text-sm font-semibold">
               For Hosts
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground">
@@ -119,12 +120,12 @@ export default function HowItWorksPage() {
                 ),
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-2xl border border-slate-200 p-8 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <div key={item.title} className="glass-card rounded-2xl p-8">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/15 text-primary">
                   {item.icon}
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{item.description}</p>
+                <p className="mt-3 leading-relaxed text-slate-400">{item.description}</p>
               </div>
             ))}
           </div>
@@ -132,13 +133,13 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Trust & Safety */}
-      <section className="bg-surface py-20">
+      <section className="bg-surface-light py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
               Built on trust and safety
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
               Every trip is backed by comprehensive protection so you can focus on the drive.
             </p>
           </div>
@@ -150,14 +151,14 @@ export default function HowItWorksPage() {
               { title: "24/7 Support", desc: "Our team is available around the clock for emergencies and questions." },
               { title: "Roadside Assistance", desc: "Flat tire, dead battery, lockout — we've got you covered anywhere." },
             ].map((item) => (
-              <div key={item.title} className="rounded-xl border border-slate-200 bg-white p-6 text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" strokeLinecap="round">
+              <div key={item.title} className="glass-card rounded-xl p-6 text-center">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/15">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" strokeWidth="2" strokeLinecap="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
                 </div>
                 <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-400">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -165,7 +166,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-20">
+      <section className="bg-surface py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-3xl font-bold tracking-tight text-foreground">
             Frequently asked questions
@@ -180,14 +181,14 @@ export default function HowItWorksPage() {
               { q: "What are the requirements to host?", a: "Your vehicle must be a 2015 model year or newer, have fewer than 130,000 miles, pass our safety inspection, and have a clean title. You must be at least 21 with a valid driver's license." },
               { q: "Is there a mileage limit?", a: "Each host sets their own mileage limit. Many offer unlimited mileage, while others set daily limits (typically 150-250 miles/day). Excess mileage fees are clearly shown before booking." },
             ].map((item) => (
-              <details key={item.q} className="group rounded-xl border border-slate-200 bg-white">
+              <details key={item.q} className="group glass-card rounded-xl">
                 <summary className="flex cursor-pointer items-center justify-between p-5 text-sm font-semibold text-foreground">
                   {item.q}
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="shrink-0 transition-transform group-open:rotate-180">
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </summary>
-                <div className="px-5 pb-5 text-sm leading-relaxed text-muted">
+                <div className="px-5 pb-5 text-sm leading-relaxed text-slate-400">
                   {item.a}
                 </div>
               </details>
@@ -197,24 +198,24 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-surface py-20">
+      <section className="bg-surface-light py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
             Ready to get started?
           </h2>
-          <p className="mt-4 text-lg text-muted">
+          <p className="mt-4 text-lg text-slate-400">
             Join the RevdCars community today.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/vehicles"
-              className="w-full rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 sm:w-auto"
+              className="btn-primary w-full rounded-xl px-8 py-3.5 text-sm text-center sm:w-auto"
             >
-              Browse cars
+              <span>Browse cars</span>
             </Link>
             <Link
               href="/host"
-              className="w-full rounded-xl border border-slate-300 px-8 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary sm:w-auto"
+              className="btn-ghost w-full rounded-xl px-8 py-3.5 text-sm text-center sm:w-auto"
             >
               Become a host
             </Link>

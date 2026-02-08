@@ -4,15 +4,17 @@ export default function AboutPage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <section className="relative overflow-hidden bg-surface">
+        <div className="orb orb-cyan -right-40 -top-40 h-96 w-96 opacity-30" />
+        <div className="orb orb-purple -left-20 bottom-0 h-72 w-72 opacity-20" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Reimagining how
               <br />
               <span className="gradient-text">cities move</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-muted">
+            <p className="mt-6 text-lg leading-relaxed text-slate-400">
               RevdCars is building the future of urban mobility. We believe that shared,
               electric transportation can make cities cleaner, communities stronger,
               and car ownership more accessible to everyone.
@@ -22,23 +24,23 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="bg-surface py-20">
+      <section className="bg-surface-light py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <span className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+              <span className="badge-glow rounded-full px-4 py-1.5 text-sm font-semibold">
                 Our Mission
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground">
                 Sustainable mobility for everyone
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-muted">
+              <p className="mt-4 text-lg leading-relaxed text-slate-400">
                 We started RevdCars with a simple idea: most cars sit idle 95% of the time.
                 What if we could unlock that potential? By connecting car owners with people
                 who need a ride, we reduce the number of cars on the road, lower emissions,
                 and build stronger communities.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-muted">
+              <p className="mt-4 text-lg leading-relaxed text-slate-400">
                 Our platform prioritizes electric vehicles and sustainable transportation,
                 making it easier and more affordable to drive electric — whether you own one or not.
               </p>
@@ -47,12 +49,12 @@ export default function AboutPage() {
               <img
                 src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&q=80"
                 alt="Electric vehicle charging"
-                className="aspect-[3/4] rounded-2xl object-cover shadow-lg"
+                className="aspect-[3/4] rounded-2xl object-cover shadow-lg shadow-black/30 ring-1 ring-white/5"
               />
               <img
                 src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80"
                 alt="Seattle cityscape"
-                className="mt-8 aspect-[3/4] rounded-2xl object-cover shadow-lg"
+                className="mt-8 aspect-[3/4] rounded-2xl object-cover shadow-lg shadow-black/30 ring-1 ring-white/5"
               />
             </div>
           </div>
@@ -60,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-white py-20">
+      <section className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
@@ -103,12 +105,12 @@ export default function AboutPage() {
                 ),
               },
             ].map((value) => (
-              <div key={value.title} className="rounded-2xl border border-slate-200 p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <div key={value.title} className="glass-card rounded-2xl p-8">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/15 text-primary">
                   {value.icon}
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-foreground">{value.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{value.description}</p>
+                <p className="mt-3 leading-relaxed text-slate-400">{value.description}</p>
               </div>
             ))}
           </div>
@@ -116,10 +118,11 @@ export default function AboutPage() {
       </section>
 
       {/* Impact */}
-      <section className="bg-slate-900 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-surface-light py-20">
+        <div className="orb orb-cyan left-1/2 top-0 h-96 w-96 -translate-x-1/2 opacity-20" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground">
               Our impact so far
             </h2>
             <p className="mt-4 text-lg text-slate-400">
@@ -134,9 +137,9 @@ export default function AboutPage() {
               { value: "15,000+", label: "Community members", detail: "Hosts and renters together" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl font-bold text-primary-light">{stat.value}</div>
-                <div className="mt-2 text-base font-semibold text-white">{stat.label}</div>
-                <div className="mt-1 text-sm text-slate-400">{stat.detail}</div>
+                <div className="text-4xl font-bold gradient-text-static">{stat.value}</div>
+                <div className="mt-2 text-base font-semibold text-foreground">{stat.label}</div>
+                <div className="mt-1 text-sm text-slate-500">{stat.detail}</div>
               </div>
             ))}
           </div>
@@ -144,13 +147,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-white py-20">
+      <section className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
               Meet the team
             </h2>
-            <p className="mt-4 text-lg text-muted">
+            <p className="mt-4 text-lg text-slate-400">
               Passionate about mobility, sustainability, and community
             </p>
           </div>
@@ -166,10 +169,10 @@ export default function AboutPage() {
                 <img
                   src={person.avatar}
                   alt={person.name}
-                  className="mx-auto h-32 w-32 rounded-full object-cover shadow-lg"
+                  className="mx-auto h-32 w-32 rounded-full object-cover shadow-lg shadow-black/30 ring-2 ring-white/10"
                 />
                 <h3 className="mt-4 font-semibold text-foreground">{person.name}</h3>
-                <p className="text-sm text-muted">{person.role}</p>
+                <p className="text-sm text-slate-500">{person.role}</p>
               </div>
             ))}
           </div>
@@ -177,24 +180,24 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-surface py-20">
+      <section className="bg-surface-light py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
             Join the movement
           </h2>
-          <p className="mt-4 text-lg text-muted">
+          <p className="mt-4 text-lg text-slate-400">
             Be part of a community that&apos;s redefining how cities move.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/vehicles"
-              className="w-full rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 sm:w-auto"
+              className="btn-primary w-full rounded-xl px-8 py-3.5 text-sm text-center sm:w-auto"
             >
-              Start driving
+              <span>Start driving</span>
             </Link>
             <Link
               href="/host"
-              className="w-full rounded-xl border border-slate-300 px-8 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary sm:w-auto"
+              className="btn-ghost w-full rounded-xl px-8 py-3.5 text-sm text-center sm:w-auto"
             >
               Start earning
             </Link>

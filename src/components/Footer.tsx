@@ -2,77 +2,47 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-50">
+    <footer className="relative border-t border-white/5 bg-surface">
+      <div className="orb orb-cyan -left-40 -top-40 h-80 w-80 opacity-30" />
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-          {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10l-2.7-3.6A2 2 0 0013.7 5H8.3a2 2 0 00-1.6.9L4 9.5 1.5 11.1A2 2 0 000 13v3c0 .6.4 1 1 1h2" />
-                  <circle cx="7" cy="17" r="2" />
-                  <circle cx="17" cy="17" r="2" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-electric">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                 </svg>
               </div>
               <span className="text-lg font-bold tracking-tight">
-                Revd<span className="text-primary">Cars</span>
+                <span className="text-foreground">Revd</span><span className="gradient-text-static">Cars</span>
               </span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted">
+            <p className="mt-4 text-sm leading-relaxed text-slate-500">
               Seattle&apos;s premier peer-to-peer car sharing platform. Secure, sustainable, and community-driven.
             </p>
           </div>
-
-          {/* Explore */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Explore
-            </h3>
-            <ul className="mt-4 space-y-3">
-              <li><Link href="/vehicles" className="text-sm text-muted transition-colors hover:text-primary">Browse Cars</Link></li>
-              <li><Link href="/how-it-works" className="text-sm text-muted transition-colors hover:text-primary">How It Works</Link></li>
-              <li><Link href="/host" className="text-sm text-muted transition-colors hover:text-primary">Become a Host</Link></li>
-              <li><Link href="/about" className="text-sm text-muted transition-colors hover:text-primary">About Us</Link></li>
-            </ul>
-          </div>
-
-          {/* Community */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Community
-            </h3>
-            <ul className="mt-4 space-y-3">
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Trust & Safety</a></li>
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Insurance</a></li>
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Host Resources</a></li>
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Community Guidelines</a></li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Support
-            </h3>
-            <ul className="mt-4 space-y-3">
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Help Center</a></li>
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Contact Us</a></li>
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Cancellation Policy</a></li>
-              <li><a href="#" className="text-sm text-muted transition-colors hover:text-primary">Report an Issue</a></li>
-            </ul>
-          </div>
+          {[
+            { title: "Explore", links: [{ href: "/vehicles", label: "Browse Cars" }, { href: "/how-it-works", label: "How It Works" }, { href: "/host", label: "Become a Host" }, { href: "/about", label: "About Us" }] },
+            { title: "Community", links: [{ href: "#", label: "Trust & Safety" }, { href: "#", label: "Insurance" }, { href: "#", label: "Host Resources" }, { href: "#", label: "Guidelines" }] },
+            { title: "Support", links: [{ href: "#", label: "Help Center" }, { href: "#", label: "Contact Us" }, { href: "#", label: "Cancellation" }, { href: "#", label: "Report Issue" }] },
+          ].map((section) => (
+            <div key={section.title}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500">{section.title}</h3>
+              <ul className="mt-4 space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.label}><Link href={link.href} className="text-sm text-slate-400 transition-colors hover:text-primary-light">{link.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-
-        {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 sm:flex-row">
-          <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} RevdCars. All rights reserved.
-          </p>
+        <div className="section-divider mt-12" />
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p className="text-xs text-slate-600">&copy; {new Date().getFullYear()} RevdCars. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-muted transition-colors hover:text-primary">Privacy</a>
-            <a href="#" className="text-xs text-muted transition-colors hover:text-primary">Terms</a>
-            <a href="#" className="text-xs text-muted transition-colors hover:text-primary">Cookies</a>
+            {["Privacy", "Terms", "Cookies"].map((item) => (
+              <a key={item} href="#" className="text-xs text-slate-600 transition-colors hover:text-slate-400">{item}</a>
+            ))}
           </div>
         </div>
       </div>
